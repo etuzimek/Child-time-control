@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
+import FreeTime from "./components/FreeTime";
+import MustDo from "./components/MustDo";
+import Summary from "./components/Summary";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Button, Container} from "react-bootstrap";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Container>
+                <h1>Hello Alan!</h1>
+                <Button variant="success" size="lg">Press the button 😊</Button>
+                <MustDo></MustDo>
+                <FreeTime></FreeTime>
+                <Summary></Summary>
+            </Container>
+        </div>
+    );
 }
 
 export default App;
