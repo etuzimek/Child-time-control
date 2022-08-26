@@ -6,6 +6,17 @@ import Summary from "./components/Summary";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button, Container} from "react-bootstrap";
 
+const API = "http://localhost:3000";
+
+fetch(`${API}/db`)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.log(error);
+    });
+
 function App() {
     return (
         <div className="App">
