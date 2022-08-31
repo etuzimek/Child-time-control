@@ -5,7 +5,7 @@ const FreeTime = () => {
     return (
         <div className="App">
             <h3>Free time <Button variant="dark">Add task ➕</Button></h3>
-            <h5>Gaming</h5>
+            <h5>Playing</h5>
             <Button>Add time ⏱️</Button>
             <h5>Watching</h5>
             <Button>Add time ⏱️</Button>

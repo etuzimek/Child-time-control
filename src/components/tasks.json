@@ -1,0 +1,34 @@
+{
+  "taskTime": [
+    {
+      "id": 1,
+      "name": "Homework",
+      "time": 15
+    },
+    {
+      "id": 2,
+      "name": "English",
+      "time": 19
+    },
+    {
+      "id": 3,
+      "name": "Physical activity",
+      "time": 14
+    },
+    {
+      "id": "4",
+      "name": "Playing",
+      "time": 26
+    },
+    {
+      "id": "5",
+      "name": "Watching",
+      "time": 17
+    },
+    {
+      "id": "6",
+      "name": "Fun with friends",
+      "time": 29
+    }
+  ]
+}
