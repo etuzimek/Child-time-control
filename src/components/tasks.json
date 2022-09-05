@@ -1,34 +1,22 @@
 {
-  "taskTime": [
+  "tasks": [
     {
-      "id": 1,
-      "name": "Homework",
-      "time": 15
+      "type": "must do",
+      "name": "English lesson",
+      "time": "28",
+      "id": 2
     },
     {
-      "id": 2,
-      "name": "English",
-      "time": 19
+      "type": "must do",
+      "name": "Walk",
+      "time": "60",
+      "id": 3
     },
     {
-      "id": 3,
-      "name": "Physical activity",
-      "time": 14
-    },
-    {
-      "id": "4",
-      "name": "Playing",
-      "time": 26
-    },
-    {
-      "id": "5",
-      "name": "Watching",
-      "time": 17
-    },
-    {
-      "id": "6",
-      "name": "Fun with friends",
-      "time": 29
+      "type": "free time",
+      "name": "Watching video",
+      "time": "47",
+      "id": 4
     }
   ]
 }

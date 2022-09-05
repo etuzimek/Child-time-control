@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {Button} from "react-bootstrap";
-import {API} from "./MustDo";
+import {API} from "./TaskManager";
 
 const Summary = () => {
     const [price, setPrice] = useState(null);
@@ -11,7 +11,7 @@ const Summary = () => {
 
         setTimeout(function () {
             console.log('Działa')
-        }, 5000);
+        }, 8000);
     }
 
     useEffect(() => {
@@ -27,7 +27,6 @@ const Summary = () => {
             .catch((err) => console.log(err));
     }, []);
 
-
     return (
         <div className="App">
             <Button onClick={checkPrice} variant="success" size="lg">Let's check the price</Button>
@@ -36,7 +35,7 @@ const Summary = () => {
                     <h6>{name} = {time} minutes</h6>
                 </div>
             ) : (
-                <p>loading..</p>
+                <p>loading...</p>
             )}
         </div>
     );

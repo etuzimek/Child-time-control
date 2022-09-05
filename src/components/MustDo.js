@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from "react";
 // import {Button} from "react-bootstrap";
-import Button from "../components/Button"
-
-export const API = "http://localhost:3000/taskTime";
+import {API} from "./TaskManager";
 
 const MustDo = () => {
     const [homework, setHomework] = useState("");
@@ -49,7 +47,7 @@ const MustDo = () => {
 
     return (
         <div className="App">
-            <h3>Must do <Button variant="dark">Add task ➕</Button></h3>
+            <h3>Must do <button variant="dark">Add task ➕</button></h3>
             <h5>Homework</h5>
             <form onSubmit={handleSubmit}>
                 <input
@@ -58,16 +56,14 @@ const MustDo = () => {
                     value={homework}
                     onChange={e => setHomework(e.target.value)}/>
                 <h5>{homework}</h5>
-                <Button>Please confirm</Button>
+                <button>Please confirm</button>
             </form>
-            <Button
+            <button
                 color={"primary"}
-                small
-                outline
                 // onClick={() => setTimeSpentForm(true)}
             >
                 Add time ⏱
-            </Button>
+            </button>
             <h5>English lesson</h5>
             <form onSubmit={handleSubmit}>
                 <input
@@ -76,14 +72,12 @@ const MustDo = () => {
                     value={english}
                     onChange={e => setEnglish(e.target.value)}/>
             </form>
-            <Button
+            <button
                 color={"primary"}
-                small
-                outline
                 // onClick={() => setTimeSpentForm(true)}
             >
                 Add time ⏱
-            </Button>
+            </button>
             <h5>Physical activity</h5>
             <form onSubmit={handleSubmit}>
                 <input
@@ -92,14 +86,12 @@ const MustDo = () => {
                     value={physical}
                     onChange={e => setPhysical(e.target.value)}/>
             </form>
-            <Button
+            <button
                 color={"primary"}
-                small
-                outline
                 // onClick={() => setTimeSpentForm(true)}
             >
                 Add time ⏱
-            </Button>
+            </button>
             {success && <h2>Form sent!</h2>}
             {errors.map(error => <p key={error}>{error}</p>)}
         </div>
