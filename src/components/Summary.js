@@ -3,40 +3,37 @@ import {Button} from "react-bootstrap";
 import {API} from "./TaskManager";
 
 const Summary = () => {
-    const [price, setPrice] = useState(null);
+    const [taskShow, setTaskShow] = useState(null);
     const [isShown, setIsShown] = useState(false);
 
-    const checkPrice = () => {
+    const summaryCheck = () => {
         setIsShown(current => !current);
-
-        setTimeout(function () {
-            console.log('Działa')
-        }, 8000);
-    }
-
-    useEffect(() => {
-        fetch(API).then(res => {
-            if (res.ok) {
-                return res.json()
-            }
-            throw new Error("oops...")
-        })
-            .then(data => {
-                setPrice(data)
+        fetch(`${API}`)
+            .then((res) => {
+                if (res.ok) {
+                    return res.json();
+                }
+                throw new Error("oops...");
             })
+            .then(setTaskShow)
             .catch((err) => console.log(err));
-    }, []);
+    };
+
+    useEffect(summaryCheck,[]);
 
     return (
         <div className="App">
-            <Button onClick={checkPrice} variant="success" size="lg">Let's check the price</Button>
-            {price ? price.map(({id, name, time}) =>
-                <div key={id} style={{display: isShown ? 'block' : 'none'}}>
-                    <h6>{name} = {time} minutes</h6>
-                </div>
-            ) : (
-                <p>loading...</p>
-            )}
+            <Button onClick={summaryCheck} variant="success" size="lg">Summary check</Button>
+            <div style={{display: isShown ? 'block' : 'none'}}>
+                <h6>You earn points</h6>
+                <h6>
+                    {taskShow ? (
+                        taskShow.map((ta) => <p key={ta.id}>{ta.time}</p>)
+                    ) : (
+                        <p>loading...</p>
+                    )}
+                </h6>
+            </div>
         </div>
     );
 };

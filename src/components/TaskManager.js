@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from "react";
 import Task from "./Task";
 import AddTask from "./AddTask";
+
 const API = "http://localhost:3000/tasks";
 
-export default function TaskManager () {
+export default function TaskManager() {
     const [tasksList, setTasksList] = useState(null);
     const getTasks = () => {
         fetch(API)
@@ -17,7 +18,6 @@ export default function TaskManager () {
             .catch((err) => console.log(err));
     };
 
-
     useEffect(getTasks, []);
 
     return (
@@ -26,7 +26,7 @@ export default function TaskManager () {
             <h5>
                 {tasksList ? (
                     tasksList.map((taskInfo) => (
-                        <Task key={taskInfo.id} task={taskInfo} refreshList={getTasks} />
+                        <Task key={taskInfo.id} task={taskInfo} refreshList={getTasks}/>
                     ))
                 ) : (
                     <p>loading tasks...</p>
@@ -36,4 +36,4 @@ export default function TaskManager () {
     );
 }
 
-export { API }
+export {API}

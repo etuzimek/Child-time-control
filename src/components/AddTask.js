@@ -31,16 +31,15 @@ function AddTask({refreshList}) {
     return (
         <>
             <h3>What did You do today?</h3>
-            <InputGroup onSubmit={addTask}>
-                {/*<Form.Control placeholder="must do or free time" type="text" value={task.type} onChange={e =>*/}
-                {/*    setTask({*/}
-                {/*        ...task,*/}
-                {/*        type:e.target.value*/}
-                {/*    })}/>*/}
-                <Form.Select aria-label="Default select example">
+            <InputGroup>
+                <Form.Select aria-label="Default select example" type="text" value={task.type} onChange={e =>
+                    setTask({
+                        ...task,
+                        type: e.target.value
+                    })}>
                     <option>Open this select menu</option>
-                    <option value="1">Must do</option>
-                    <option value="2">Free time</option>
+                    <option value="must do">Must do</option>
+                    <option value="free time">Free time</option>
                 </Form.Select>
                 <Form.Control placeholder="name of task" type="text" value={task.name} onChange={e =>
                     setTask({
@@ -50,9 +49,9 @@ function AddTask({refreshList}) {
                 <Form.Control placeholder="time" type="number" value={task.time} onChange={e =>
                     setTask({
                         ...task,
-                        time:e.target.value
+                        time: e.target.value
                     })}/>
-                <Button>Add</Button>
+                <Button onClick={addTask}>Add</Button>
             </InputGroup>
         </>
     );

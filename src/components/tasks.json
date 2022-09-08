@@ -4,19 +4,19 @@
       "type": "must do",
       "name": "English lesson",
       "time": "28",
-      "id": 2
+      "id": 1
     },
     {
       "type": "must do",
       "name": "Walk",
       "time": "60",
-      "id": 3
+      "id": 2
     },
     {
       "type": "free time",
-      "name": "Watching video",
+      "name": "Watching videos",
       "time": "47",
-      "id": 4
+      "id": 3
     }
   ]
 }
