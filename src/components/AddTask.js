@@ -49,7 +49,7 @@ function AddTask({refreshList}) {
                 <Form.Control placeholder="time" type="number" value={task.time} onChange={e =>
                     setTask({
                         ...task,
-                        time: e.target.value
+                        time: parseInt(e.target.value)
                     })}/>
                 <Button onClick={addTask}>Add</Button>
             </InputGroup>

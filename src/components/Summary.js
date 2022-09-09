@@ -8,7 +8,7 @@ const Summary = () => {
 
     const summaryCheck = () => {
         setIsShown(current => !current);
-        fetch(`${API}`)
+        fetch(API)
             .then((res) => {
                 if (res.ok) {
                     return res.json();
@@ -19,20 +19,27 @@ const Summary = () => {
             .catch((err) => console.log(err));
     };
 
-    useEffect(summaryCheck,[]);
+    let productiveTime = 0;
+    let notProductiveTime = 0;
+
+    taskShow?.forEach(item => {
+        if (item.type === "must do") {
+            productiveTime += item.time;
+        } else {
+            notProductiveTime += item.time;
+        }
+
+    });
+
+    useEffect(summaryCheck, []);
+
+    const Price = productiveTime / notProductiveTime * 100;
 
     return (
         <div className="App">
             <Button onClick={summaryCheck} variant="success" size="lg">Summary check</Button>
             <div style={{display: isShown ? 'block' : 'none'}}>
-                <h6>You earn points</h6>
-                <h6>
-                    {taskShow ? (
-                        taskShow.map((ta) => <p key={ta.id}>{ta.time}</p>)
-                    ) : (
-                        <p>loading...</p>
-                    )}
-                </h6>
+                <h6>Proportion productive tasks to not productive is {Math.round(Price)}%</h6>
             </div>
         </div>
     );
