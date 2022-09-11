@@ -1,9 +1,10 @@
 import React from "react";
+import {Button} from "react-bootstrap";
 
 export default function Prices () {
     return (
         <>
-            <div>AA</div>
+            <Button size="sm">Check price</Button>
         </>
     );
 }

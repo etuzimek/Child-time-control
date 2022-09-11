@@ -4,6 +4,7 @@ import Summary from "./components/Summary";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button, Container} from "react-bootstrap";
 import TaskManager from "./components/TaskManager";
+import Prices from "./components/Prices";
 
 function App(props) {
     const [isShown, setIsShown] = useState(false);
@@ -20,6 +21,7 @@ function App(props) {
                 <div style={{display: isShown ? 'block' : 'none'}}>
                     <TaskManager/>
                     <Summary/>
+                    {/*<Prices/>*/}
                 </div>
             </Container>
         </div>
