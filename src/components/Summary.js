@@ -33,13 +33,13 @@ const Summary = () => {
 
     useEffect(summaryCheck, []);
 
-    const Price = productiveTime / notProductiveTime * 100;
+    const price = productiveTime / notProductiveTime * 100;
 
     return (
         <div className="App">
             <Button onClick={summaryCheck} variant="success" size="lg">Summary check</Button>
             <div style={{display: isShown ? 'block' : 'none'}}>
-                <h6>Proportion productive tasks to not productive is {Math.round(Price)}%</h6>
+                {price >= 100 ? <h5>Well done, You did good job today</h5> : <h5>Try do better tomorrow</h5>}
             </div>
         </div>
     );

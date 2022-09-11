@@ -16,7 +16,7 @@ function App(props) {
         <div className="App">
             <Container>
                 <h1>Hello Alan!</h1>
-                <Button onClick={handleClick} variant="success" size="lg">Press the button</Button>
+                <Button onClick={handleClick} variant="success" size="lg">Click Me!!!</Button>
                 <div style={{display: isShown ? 'block' : 'none'}}>
                     <TaskManager/>
                     <Summary/>
