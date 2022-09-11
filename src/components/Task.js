@@ -56,7 +56,7 @@ function Task({task, refreshList}) {
     return (
         <div>
             {task.name} {task.time}
-            <Button size="sm" variant="danger" onClick={() => deleteTask(task.id)}>delete</Button>
+            <Button size="sm" variant="danger" onClick={() => deleteTask(task.id)}>Delete</Button>
             <Button size="sm" onClick={() => setIsEditable(true)}>Edit</Button>
         </div>
     );
