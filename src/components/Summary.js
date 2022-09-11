@@ -39,7 +39,7 @@ const Summary = () => {
         <div className="App">
             <Button onClick={summaryCheck} variant="success" size="lg">Summary check</Button>
             <div style={{display: isShown ? 'block' : 'none'}}>
-                {price >= 100 ? <h5>Well done, You did good job today</h5> : <h5>Try do better tomorrow</h5>}
+                {price >= 100 ? <h5>Well done, You did good job today</h5> : <h5>Try do better next time</h5>}
             </div>
         </div>
     );
